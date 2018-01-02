@@ -1,0 +1,46 @@
+{
+	"name": "oregator",
+	"displayName": "oregator",
+	"description": "language support oregator",
+	"version": "0.0.1",
+	"publisher": "csaar95",
+	"engines": {
+		"vscode": "^1.19.0"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "oregator",
+				"aliases": [
+					"oregator",
+					"oregator"
+				],
+				"extensions": [
+					".oregator",
+					".ry",
+					".inc",
+					".dep",
+					".def",
+					".del",
+					".dew"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "oregator",
+				"scopeName": "source.oregator",
+				"path": "./syntaxes/oregator.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "0c7b130c-f408-440d-8f99-d31bb79ceaf2",
+		"publisherDisplayName": "csaar95",
+		"publisherId": "11d67e28-6784-4570-9550-eb8018e46933"
+	}
+}

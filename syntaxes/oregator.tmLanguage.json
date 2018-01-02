@@ -1,0 +1,246 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "oregator",
+	"patterns": [
+		{
+			"include": "#header"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#format"
+		},
+		{
+			"include": "#format_modifiers"
+		},
+		{
+			"include": "#area"
+		},
+		{
+			"include": "#area_modifiers"
+		},
+		{
+			"include": "#block"
+		},
+		{
+			"include": "#block_modifiers"
+		},
+		{
+			"include": "#block_name"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#type_modifiers"
+		},
+		{
+			"include": "#type_name"
+		},
+		{
+			"include": "#barcode_modifiers"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#colors"
+		},
+		{
+			"include": "#constant"
+		}
+	],
+	"repository": {
+		"header": {
+			"patterns": [{
+				"match": "(^\\s*REPORT\\b)(.*?)(\\b[a-zA-Z]\\w*)|(^\\s*REPORT\\s*$)",
+				"captures": {
+					"1": {
+						"name": "keyword.control.oregator"
+					},
+					"3": {
+						"name": "header.oregator"
+					},
+					"4": {
+						"name": "keyword.control.oregator"
+					}
+				}
+			}]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.numeric.oregator",
+				"match": "\\d+\\.\\d+|\\d+"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.oregator",
+				"match": "\\+|-|&|=|&=|!=|<|>|<=|>=|\\/|\\*"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.oregator",
+				"match": ",|;|\\b(ABORT|AREA|BATCH|BLOCK|CLEAR_PAGE|CLOSE|COMPUTE|ELSE|END|ENDBATCH|ENDBLOCK|ENDIF|ENDREPORT|FOOTER|HEADER|IF|INCLUDE|INPUT|NEW|OPEN|OUTPUT|PAGE|PREPEND|PROCESSING|RECORD|STROKE|THEN)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.oregator",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.oregator",
+					"match": "\\%."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.number-sign.oregator",
+				"begin": "#",
+				"end": "$"
+			}]
+		},
+		"format": {
+			"patterns": [{
+				"match": "(\\bFORMAT\\b)(.*?)(\\bBANDIT\\b|\\bCAB\\b|\\bFRAMEMAKER\\b|\\bPCL\\b|\\bPDF\\b|\\bPOSTSCRIPT\\b|\\bTEC\\b|\\bTEXT\\b|\\bWINWORD\\b)",
+				"captures": {
+					"1": {
+						"name": "keyword.control.oregator"
+					},
+					"3": {
+						"name": "storage.type.oregator"
+					}
+				}
+			}]
+		},
+		"format_modifiers": {
+			"patterns": [{
+				"name": "storage.modifiers.oregator",
+				"match": "\\b(CPI|LANDSCAPE|LPI|PORTRAIT)\\b"
+			}]
+		},
+		"area_line": {
+			"patterns": [{
+				"match": "(?<=AREA)(.*?)(\\bFORMAT\\b)",
+				"captures": {
+					"2": {
+						"name": "storage.modifier.oregator"
+					}
+				}
+			}]
+		},
+		"area_modifiers": {
+			"patterns": [{
+				"name": "storage.modifiers.oregator",
+				"match": "\\b(HORIZONTAL|VERTICAL)\\b"
+			}]
+		},
+		"block": {
+			"patterns": [{
+				"match": "(?<=BLOCK)((.*?)(\\b[a-zA-Z]\\w*\\b)(.*?)|(.*?))(\\b(((FORMAT\\b)(.*?)(\\bIN))|(FORMAT|IN)|(?<=BLOCK)(.*?)(\\b[a-zA-Z]\\w*))\\b)",
+				"captures": {
+					"3": {
+						"name": "entity.name.class.oregator"
+					},
+					"9": {
+						"name": "storage.modifier.oregator"
+					},
+					"11": {
+						"name": "storage.modifier.oregator"
+					},
+					"12": {
+						"name": "storage.modifier.oregator"
+					},
+					"14": {
+						"name": "entity.name.class.oregator"
+					}
+				}
+			}]
+		},
+		"block_modifiers": {
+			"patterns": [{
+				"name": "storage.modifier.oregator",
+				"match": "\\b(BOTTOM|BREAK|DEFERRED|FIT_HORIZONTAL|FIT_VERTICAL|GRAPHIC|INHERIT|KEEP|NEED_HORIZONTAL|NEED_VERTICAL)\\b"
+			}]
+		},
+		"block_name": {
+			"patterns": [{
+				"match": "((\\b[a-zA-Z]\\w*)(?=\\.))|((?<=INPUT|NEED_HORIZONTAL|NEED_VERTICAL|NEW|STROKE)(.*?)(\\b[a-zA-Z]\\w*))",
+				"captures": {
+					"2": {
+						"name": "entity.name.class.oregator"
+					},
+					"5": {
+						"name": "entity.name.class.oregator"
+					}
+				}
+			}]
+		},
+		"types": {
+			"patterns": [{
+				"name": "storage.type.oregator",
+				"match": "\\b(BOX|FIELD|IMAGE|LINE|TEXT)\\b"
+			}]
+		},
+		"type_modifiers": {
+			"patterns": [{
+				"name": "storage.modifier.oregator",
+				"match": "\\b(BARCODE_128|BARCODE_25|BARCODE_39|BARCODE_DMTX|BARCODE_EAN|BARCODE_QR|BOOKMARK|BORDER|CENTERED|CLIP_AREA|CLIP_BLOCK|COMMA|DATETIME|DBIMAGE|FGND|FIXCOMMA|FIXED|FONT|LEFT|NOQUOTE|NOTE|RIGHT|UNIQ)\\b"
+			}]
+		},
+		"type_name": {
+			"patterns": [{
+				"match": "((?<=\\w\\.)(\\b[a-zA-Z]\\w*))|((?<=BOX|FIELD|IMAGE|LINE|TEXT)(.*?)(\\b[a-zA-Z]\\w*))",
+				"captures": {
+					"2": {
+						"name": "support.type.property-name.oregator"
+					},
+					"5": {
+						"name": "support.type.property-name.oregator"
+					}
+				}
+			}]
+		},
+		"barcode_modifiers": {
+			"patterns": [{
+				"name": "storage.modifier.oregator",
+				"match": "\\b(BARCODE_RATIO|BARCODE_ROTATE|DMTX_SCHEME_ASCII|DMTX_SCHEME_BASE256|DMTX_SCHEME_C40|DMTX_SCHEME_EDIFACT|DMTX_SCHEME_TEXT|DMTX_SCHEME_X12|QR_CASE_SENSITIVE|QR_CASE_INSENSITIVE|QR_ECLEVEL_H|QR_ECLEVEL_L|QR_ECLEVEL_M|QR_ECLEVEL_Q|QR_MODE_8|QR_MODE_AN|QR_MODE_ECI|QR_MODE_FNC1FIRST|QR_MODE_FNC1SECOND|QR_MODE_KANJI|QR_MODE_NUM|QR_MODE_STRUCTURE)\\b"
+			}]
+		},
+		"functions": {
+			"patterns": [{
+				"name": "entity.name.function.oregator",
+				"match": "(\\b(ABS|ASSIGN|RGB|CONTROL|COUNT|DATE|EANPZ|ELEMENT|EXISTS|FETCH|SUM|ROUND|LENGTH|LTRIM|LZERO|RTRIM|STRSTR|STRSUB|SUBSTR)(?=\\())"
+			}]
+		},
+		"colors": {
+			"patterns": [{
+				"name": "constant.rgb-value.oregator",
+				"match": "\\b(BLACK|DARKGRAY|LIGHTGRAY|WHITEGRAY)\\b"
+			}]
+		},
+		"constant": {
+			"patterns": [{
+				"name": "constant.language.oregator",
+				"match": "\\b(FORMAT|INF_SYMBOL|MIF_TEMPLATE|NAN_SYMBOL|NEWLINE|PAGENR|REPORT)\\b"
+			}]
+		}
+	},
+	"scopeName": "source.oregator"
+}

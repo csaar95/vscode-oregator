@@ -1,0 +1,45 @@
+{
+    "comments": {
+        // symbol used for single line comment. Remove this entry if your language does not support line comments
+        "lineComment": "#"
+    },
+    // symbols used as brackets
+    "brackets": [
+        ["[", "]"],
+        ["(", ")"],
+        ["PAGE", "END"],
+        ["BATCH", "ENDBATCH"],
+        ["COMPUTE", "END"],
+        ["FOOTER", "END"],
+        ["HEADER", "END"],
+        ["THEN", "ELSE"],
+        ["THEN", "ENDIF"],
+        ["ELSE", "ENDIF"],
+        ["NEW", "STROKE"],
+        ["RECORD", "END"],
+        ["REPORT", "ENDREPORT"]
+    ],
+    // symbols that are auto closed when typing
+    "autoClosingPairs": [
+        ["[", "]"],
+        ["(", ")"],
+        ["'", "'"],
+        ["BATCH", "ENDBATCH;"],
+        ["BLOCK", "ENDBLOCK;"],
+        ["COMPUTE", "END;"],
+        ["FOOTER", "END;"],
+        ["HEADER", "END;"],
+        ["IF", "ENDIF;"],
+        ["INCLUDE", ";"],
+        ["NEW", ";"],
+        ["PREPEND", ";"],
+        ["RECORD", "END;"],
+        ["STROKE", ";"]
+    ],
+    // symbols that that can be used to surround a selection
+    "surroundingPairs": [
+        ["[", "]"],
+        ["(", ")"],
+        ["'", "'"]
+    ]
+}
