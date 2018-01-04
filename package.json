@@ -1,21 +1,29 @@
 {
 	"name": "oregator",
 	"displayName": "oregator",
-	"description": "language support oregator",
-	"version": "1.0.0",
+	"description": "language support for OREGATOR",
+	"version": "1.0.1",
 	"publisher": "csaar95",
 	"engines": {
 		"vscode": "^1.19.0"
 	},
+	"icon": "images/oregator128.png",
 	"categories": [
 		"Languages"
+	],
+	"keywords": [
+		"oregator",
+		"casymir",
+		"opag",
+		"sigmatech",
+		"report"
 	],
 	"contributes": {
 		"languages": [
 			{
 				"id": "oregator",
 				"aliases": [
-					"oregator",
+					"OREGATOR",
 					"oregator"
 				],
 				"extensions": [

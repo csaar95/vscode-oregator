@@ -4,18 +4,4 @@ Language support for [OREGATOR](https://www.opag.ch/index.php/8-produkte/softwar
 
 ## Features
 
-![Example](images/oregator_language.gif)
-
-## Release Notes
-
-### 1.0.0
-
-* Initial Release
-* Bugfix
-* README
-
-### 0.0.1
-
-* Published
-
------------------------------------------------------------------------------------------------------------
+![Example](https://i.imgur.com/vCljl7s.gif)
