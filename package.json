@@ -2,7 +2,7 @@
 	"name": "oregator",
 	"displayName": "oregator",
 	"description": "language support for OREGATOR",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "csaar95",
 	"engines": {
 		"vscode": "^1.19.0"
