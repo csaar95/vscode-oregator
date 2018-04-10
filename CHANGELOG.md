@@ -3,7 +3,8 @@ All notable changes to the "oregator" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## 1.0.3
+- **Added** default charset "ISO 8859-1"
 
 ## 1.0.2
 - **Removed** autoclosing pairs for "BATCH", "BLOCK", "IF" 
