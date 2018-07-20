@@ -6,7 +6,7 @@ Language support for [OREGATOR](https://www.opag.ch/index.php/8-produkte/softwar
 ## Features
 
 ### Syntax highlighting
-![Example - Scroll](https://i.imgur.com/9GNLxkD.gif)
+![Example - Scroll](https://i.imgur.com/s4mCW1a.gif)
 
 ### Snippets
 ![Example - Snippet](https://i.imgur.com/6srmWSk.gif)
