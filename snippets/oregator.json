@@ -1,0 +1,332 @@
+{
+  "ABS": {
+    "prefix": "ABS",
+    "description": "Mathematischer Absolutwert",
+    "body": [
+      "ABS(${1:float})"
+    ]
+  },
+  "AREA": {
+    "prefix": "AREA",
+    "description": "AREA-Deklaration -> Noch nicht voll funktionsfähig!",
+    "body": [
+      "AREA\t${1:name}\t\t"
+    ]
+  },
+  "ASSIGN": {
+    "prefix": "ASSIGN",
+    "description": "Zuweisung",
+    "body": [
+      "ASSIGN(${1:'${2:block}.${3:field}'}, ${4:value});"
+    ]
+  },
+  "BARCODE": {
+    "prefix": "BARCODE",
+    "description": "Barcodeauswahl -> Noch nicht voll funktionsfähig!",
+    "body": [
+      "${1|BARCODE_128,BARCODE_25,BARCODE_39,BARCODE_DMTX,BARCODE_EAN,BARCODE_QR|}"
+    ]
+  },
+  "BATCH": {
+    "prefix": "BATCH",
+    "description": "BATCH",
+    "body": [
+      "BATCH${1: }ENDBATCH;"
+    ]
+  },
+  "BLOCK": {
+    "prefix": "BLOCK",
+    "description": "BLOCK-Deklaration -> Noch nicht voll funktionsfähig!",
+    "body": [
+      "BLOCK ${1:name} $2",
+      "\t$0",
+      "ENDBLOCK;"
+    ]
+  },
+  "BOX": {
+    "prefix": "BOX",
+    "description": "BOX-Deklaration",
+    "body": [
+      "BOX\t\t${1:B}\t\t($2,$3,$4,$5) RGB(${6:1},${7:1},${8:1}) BORDER ${9:0} RGB(${10:0},${11:0},${12:0});"
+    ]
+  },
+  "BREAK-ON": {
+    "prefix": "BREAK ON",
+    "description": "Schleife über Feldinstanzen",
+    "body": [
+      "BREAK ON ${1:${2:block}.${3:field}}",
+      "\tHEADER$4",
+      "\tEND;",
+      "\tFOOTER$5",
+      "\tEND;$0",
+      "END;"
+    ]
+  },
+  "COMPUTE": {
+    "prefix": "COMPUTE",
+    "description": "COMPUTE",
+    "body": [
+      "COMPUTE",
+      "\tHEADER$1",
+      "\tEND;",
+      "\tFOOTER$2",
+      "\tEND;$0",
+      "END;"
+    ]
+  },
+  "CONDITION": {
+    "prefix": "IF",
+    "description": "Bedingung",
+    "body": [
+      "IF (${1:condition}) THEN${2: }ELSE${3: }ENDIF;"
+    ]
+  },
+  "CONTROL": {
+    "prefix": "CONTROL",
+    "description": "Drucker-Steuersequenz",
+    "body": [
+      "CONTROL(${1:integer})"
+    ]
+  },
+  "COUNT": {
+    "prefix": "COUNT",
+    "description": "Anzahl Instanzen auf aktueller Seite",
+    "body": [
+      "COUNT(${1:${2:block}.${3:field}})"
+    ]
+  },
+  "DATETIME-fkt": {
+    "prefix": "DATE",
+    "description": "Aktuelles Datum im angegebenen Format",
+    "body": [
+      "DATETIME('${1:%d.%m.%y}')"
+    ]
+  },
+  "DATETIME-dekl": {
+    "prefix": "DATETIME",
+    "description": "Datumformat",
+    "body": [
+      "DATETIME '${1:%d.%m.%y}'"
+    ]
+  },
+  "EANPZ": {
+    "prefix": "EANPZ",
+    "description": "EAN-Prüfziffer",
+    "body": [
+      "EANPZ(${1:string})"
+    ]
+  },
+  "ELEMENT": {
+    "prefix": "ELEMENT",
+    "description": "Extrahiere Listenelement",
+    "body": [
+      "ELEMENT(${1:string}, '${2:,}', ${3:index})"
+    ]
+  },
+  "EXISTS": {
+    "prefix": "EXISTS",
+    "description": "Gibt 1 zurück, wenn der Block auf der aktuellen Seite existiert, sonst 0",
+    "body": [
+      "EXISTS(${1:'${2:block}'})"
+    ]
+  },
+  "FETCH": {
+    "prefix": "FETCH",
+    "description": "Inhalt eines Feldes",
+    "body": [
+      "FETCH(${1:'${2:block.field}'})"
+    ]
+  },
+  "FIELD": {
+    "prefix": "FIELD",
+    "description": "FIELD-Deklaration",
+    "body": [
+      "FIELD\t${1:name}\t\t($2,$3,$4,$5)$6;"
+    ]
+  },
+  "FIELD-dummmy": {
+    "prefix": "FIELD",
+    "description": "Dummyfeld",
+    "body": [
+      "FIELD\t${1:Dummy}\t\t(${2:0},${3:0},${4:0},${5:0})$6;"
+    ]
+  },
+  "FORMAT": {
+    "prefix": "FORMAT",
+    "description": "FORMAT-Deklaration",
+    "body": [
+      "FORMAT ${1:name}\t${2|PDF,POSTSCRIPT,PCL,TEXT,FRAMEMAKER,WINWORD,BANDIT,CAB,TEC|}\t(${3:0},${4:0},${5:0},${6:0})$7;"
+    ]
+  },
+  "FONT": {
+    "prefix": "FONT",
+    "description": "Schriftart definieren",
+    "body": [
+      "FONT '${1|Helvetica,Helvetica-Bold,Helvetica-Oblique,Helvetica-BoldOblique,Courier,Courier-Bold,Courier-Oblique,Courier-BoldOblique,Times-Roman,Times-Italic,Times-Bold,Times-BoldItalic|}'"
+    ]
+  },
+  "FOOTER": {
+    "prefix": "FOOTER",
+    "description": "Footer",
+    "body": [
+      "FOOTER",
+      "\t$0",
+      "END;"
+    ]
+  },
+  "HEADER": {
+    "prefix": "HEADER",
+    "description": "Header",
+    "body": [
+      "HEADER",
+      "\t$0",
+      "END;"
+    ]
+  },
+  "IMAGE": {
+    "prefix": "IMAGE",
+    "description": "IMAGE-Deklaration",
+    "body": [
+      "IMAGE\t${1:Logo}\t\t($2,$3,$4,$5)$6 ${7:'${8:${9:sample}.${10|png,jpg,eps,gif,bmp,tif|}}'};"
+    ]
+  },
+  "INCLUDE": {
+    "prefix": "INCLUDE",
+    "description": "Datei einbinden",
+    "body": [
+      "INCLUDE '${1:file}';"
+    ]
+  },
+  "NEW": {
+    "prefix": "NEW",
+    "description": "Block platzieren",
+    "body": [
+      "NEW ${1:block};$2",
+      "STROKE ${1:block};"
+    ]
+  },
+  "LENGTH": {
+    "prefix": "LENGTH",
+    "description": "Länge der Zeichenkette",
+    "body": [
+      "LENGTH(${1:string})"
+    ]
+  },
+  "LINE-horizontal": {
+    "prefix": "LINE",
+    "description": "LINE-Deklaration (waagerecht)",
+    "body": [
+      "LINE\t${1:LH}\t\t($2,$3,$4,${5:0}) BORDER ${6:0} RGB(${6:0},${7:0},${8:0})$9;"
+    ]
+  },
+  "LINE-vertical": {
+    "prefix": "LINE",
+    "description": "LINE-Deklaration (senkrecht)",
+    "body": [
+      "LINE\t${1:LV}\t\t($2,$3,${4:0},$5) BORDER ${6:0} RGB(${6:0},${7:0},${8:0})$9;"
+    ]
+  },
+  "LTRIM": {
+    "prefix": "LTRIM",
+    "description": "Schneidet links Leerzeichen ab",
+    "body": [
+      "LTRIM(${1:string})"
+    ]
+  },
+  "LZERO": {
+    "prefix": "LZERO",
+    "description": "Füllt Parameter 1 bis auf die in Parameter 2 angegebenen Länge mit führenden Nullen auf",
+    "body": [
+      "LZERO(${1:string}, ${2:integer})"
+    ]
+  },
+  "NEED_HORIZONTAL": {
+    "prefix": "NEED_HORIZONTAL",
+    "description": "Reserviert Platz für den angegebenen Block",
+    "body": [
+      "NEED_HORIZONTAL ${1:block}"
+    ]
+  },
+  "NEED_VERTICAL": {
+    "prefix": "NEED_VERTICAL",
+    "description": "Reserviert Platz für den angegebenen Block",
+    "body": [
+      "NEED_VERTICAL ${1:block}"
+    ]
+  },
+  "PREPEND": {
+    "prefix": "PREPEND",
+    "description": "Suchpfad einbinden",
+    "body": [
+      "PREPEND '${1:folder/}';"
+    ]
+  },
+  "RECORD": {
+    "prefix": "RECORD",
+    "description": "RECORD",
+    "body": [
+      "RECORD",
+      "\tHEADER$1",
+      "\tEND;",
+      "\tFOOTER$2",
+      "\tEND;$0",
+      "END;"
+    ]
+  },
+  "RGB": {
+    "prefix": "RGB",
+    "description": "RGB-Farbwert, Angabe im Intervall 0-1",
+    "body": [
+      "RGB(${1:1}, ${2:1}, ${3:1})"
+    ]
+  },
+  "ROUND": {
+    "prefix": "ROUND",
+    "description": "Rundet Parameter 1 auf die in Parameter 2 angegebene Genauigkeit",
+    "body": [
+      "ROUND(${1:float}, ${2:0.01})"
+    ]
+  },
+  "RTRIM": {
+    "prefix": "RTRIM",
+    "description": "Schneidet rechts Leerzeichen ab",
+    "body": [
+      "RTRIM(${1:string})"
+    ]
+  },
+  "STRSTR": {
+    "prefix": "STRSTR",
+    "description": "Liefert die Position des Pattern im String, sonst 0",
+    "body": [
+      "STRSTR(${1:string}, ${2:pattern})"
+    ]
+  },
+  "STRSUB": {
+    "prefix": "STRSUB",
+    "description": "Ersetzt das erste Vorkommnis des Patterns durch den Ersatz",
+    "body": [
+      "STRSUB(${1:string}, ${2:pattern}, ${3:ersatz})"
+    ]
+  },
+  "SUBSTR": {
+    "prefix": "SUBSTR",
+    "description": "Substring",
+    "body": [
+      "SUBSTR(${1:string}, ${2:index}, ${3:length})"
+    ]
+  },
+  "SUM": {
+    "prefix": "SUM",
+    "description": "Summe aller Instanzen auf aktueller Seite",
+    "body": [
+      "SUM(${1:block.field})"
+    ]
+  },
+  "TEXT": {
+    "prefix": "TEXT",
+    "description": "TEXT-Deklaration",
+    "body": [
+      "TEXT\t${1:name}\t\t($2,$3,$4,${5:0.115},${6:1},${5:0.115})$7;"
+    ]
+  }
+}

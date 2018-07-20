@@ -2,14 +2,33 @@
 	"name": "oregator",
 	"displayName": "oregator",
 	"description": "language support for OREGATOR",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"publisher": "csaar95",
 	"engines": {
 		"vscode": "^1.19.0"
 	},
+	"author": {
+		"name": "Christian Saar",
+		"url": "https://github.com/csaar95/"
+	},
+	"maintainers": [
+		{
+			"name": "SIGMATECH Informatik GmbH",
+			"url": "https://www.sigmatech.de/"
+		},
+		{
+			"name": "OPAG Informatik AG",
+			"url": "https://opag.ch/"
+		}
+	],
 	"icon": "images/oregator128.png",
+	"galleryBanner": {
+		"color": "#84b4da",
+		"theme": "light"
+	},
 	"categories": [
-		"Languages"
+		"Programming Languages",
+		"Snippets"
 	],
 	"keywords": [
 		"oregator",
@@ -49,15 +68,26 @@
 			"[oregator]": {
 				"files.encoding": "iso88591"
 			}
-		}
+		},
+		"snippets": [
+			{
+				"language": "oregator",
+				"path": "./snippets/oregator.json"
+			}
+		]
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://csaar95.visualstudio.com/_git/oregator"
+		"url": "https://github.com/csaar95/oregator"
 	},
+	"bugs": {
+		"url": "https://github.com/csaar95/oregator/issues",
+		"email": "oregator@sigmatech.de"
+	},
+	"homepage": "https://github.com/csaar95/oregator/blob/master/README.md",
 	"__metadata": {
 		"id": "0c7b130c-f408-440d-8f99-d31bb79ceaf2",
-		"publisherDisplayName": "csaar95",
+		"publisherDisplayName": "SIGMATECH Informatik",
 		"publisherId": "11d67e28-6784-4570-9550-eb8018e46933"
 	}
 }

@@ -66,7 +66,7 @@
 	"repository": {
 		"header": {
 			"patterns": [{
-				"match": "(^\\s*REPORT\\b)(.*?)(\\b[a-zA-Z]\\w*)|(^\\s*REPORT\\s*$)",
+				"match": "^\\s*(\\bREPORT\\b)(\\s*(\\b[a-zA-Z]\\w*\\b)\\s*$|\\s*$)",
 				"captures": {
 					"1": {
 						"name": "keyword.control.oregator"
@@ -83,7 +83,7 @@
 		"numbers": {
 			"patterns": [{
 				"name": "constant.numeric.oregator",
-				"match": "\\d+\\.\\d+|\\d+"
+				"match": "\\b\\d+(\\.\\d+)?\\b"
 			}]
 		},
 		"operators": {
@@ -95,7 +95,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.oregator",
-				"match": ",|;|\\b(ABORT|AREA|BATCH|BLOCK|CLEAR_PAGE|CLOSE|COMPUTE|ELSE|END|ENDBATCH|ENDBLOCK|ENDIF|ENDREPORT|FOOTER|HEADER|IF|INCLUDE|INPUT|NEW|OPEN|OUTPUT|PAGE|PREPEND|PROCESSING|RECORD|STROKE|THEN)\\b"
+				"match": ",|;|\\b(ABORT|BATCH|BLOCK|BREAK\\s+ON|CLEAR_PAGE|CLOSE|COMPUTE|ELSE|END|ENDBATCH|ENDBLOCK|ENDIF|ENDREPORT|FOOTER|HEADER|IF|INCLUDE|INPUT|NEW|OPEN|OUTPUT|PAGE|PREPEND|PROCESSING|RECORD|STROKE|THEN)\\b"
 			}]
 		},
 		"strings": {
@@ -105,7 +105,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.oregator",
-					"match": "\\%."
+					"match": "\\%.|@"
 				}
 			]
 		},
@@ -118,7 +118,7 @@
 		},
 		"format": {
 			"patterns": [{
-				"match": "(\\bFORMAT\\b)(.*?)(\\bBANDIT\\b|\\bCAB\\b|\\bFRAMEMAKER\\b|\\bPCL\\b|\\bPDF\\b|\\bPOSTSCRIPT\\b|\\bTEC\\b|\\bTEXT\\b|\\bWINWORD\\b)",
+				"match": "^\\s*(FORMAT\\b)(.*?)(\\bBANDIT\\b|\\bCAB\\b|\\bFRAMEMAKER\\b|\\bPCL\\b|\\bPDF\\b|\\bPOSTSCRIPT\\b|\\bTEC\\b|\\bTEXT\\b|\\bWINWORD\\b)",
 				"captures": {
 					"1": {
 						"name": "keyword.control.oregator"
@@ -135,12 +135,18 @@
 				"match": "\\b(CPI|LANDSCAPE|LPI|PORTRAIT)\\b"
 			}]
 		},
-		"area_line": {
+		"area": {
 			"patterns": [{
-				"match": "(?<=AREA)(.*?)(\\bFORMAT\\b)",
+				"match": "^\\s*((\\bAREA\\b)(.*?)(\\bFORMAT\\b)|(\\bAREA\\b))",
 				"captures": {
 					"2": {
+						"name": "keyword.control.oregator"
+					},
+					"4": {
 						"name": "storage.modifier.oregator"
+					},
+					"5": {
+						"name": "keyword.control.oregator"
 					}
 				}
 			}]
@@ -195,18 +201,18 @@
 		"types": {
 			"patterns": [{
 				"name": "storage.type.oregator",
-				"match": "\\b(BOX|FIELD|IMAGE|LINE|TEXT)\\b"
+				"match": "^\\s*\\b(BOX|FIELD|IMAGE|LINE|TEXT)\\b"
 			}]
 		},
 		"type_modifiers": {
 			"patterns": [{
 				"name": "storage.modifier.oregator",
-				"match": "\\b(BARCODE_128|BARCODE_25|BARCODE_39|BARCODE_DMTX|BARCODE_EAN|BARCODE_QR|BOOKMARK|BORDER|CENTERED|CLIP_AREA|CLIP_BLOCK|COMMA|DATETIME|DBIMAGE|FGND|FIXCOMMA|FIXED|FONT|LEFT|NOQUOTE|NOTE|PICTURE|RIGHT|UNIQ)\\b"
+				"match": "\\b(BARCODE_128|BARCODE_25|BARCODE_39|BARCODE_DMTX|BARCODE_EAN|BARCODE_QR|BOOKMARK|BORDER|CENTERED|CLIP_AREA|CLIP_BLOCK|COMMA|DBIMAGE|FGND|FIXCOMMA|FIXED|FONT|LEFT|NOQUOTE|NOTE|PICTURE|RIGHT|UNIQ)\\b|\\bDATETIME\\b\\s*(?=')"
 			}]
 		},
 		"type_name": {
 			"patterns": [{
-				"match": "((?<=\\w\\.)(\\b[a-zA-Z]\\w*))|((?<=BOX|FIELD|IMAGE|LINE|TEXT)(.*?)(\\b[a-zA-Z]\\w*))",
+				"match": "((?<=\\w\\.)(\\b[a-zA-Z]\\w*))|((?<=BOX|FIELD|IMAGE|LINE|TEXT)(\\s*?)(\\b[a-zA-Z]\\w*))",
 				"captures": {
 					"2": {
 						"name": "support.type.property-name.oregator"
@@ -220,13 +226,13 @@
 		"barcode_modifiers": {
 			"patterns": [{
 				"name": "storage.modifier.oregator",
-				"match": "\\b(BARCODE_RATIO|BARCODE_ROTATE|DMTX_SCHEME_ASCII|DMTX_SCHEME_BASE256|DMTX_SCHEME_C40|DMTX_SCHEME_EDIFACT|DMTX_SCHEME_TEXT|DMTX_SCHEME_X12|QR_CASE_SENSITIVE|QR_CASE_INSENSITIVE|QR_ECLEVEL_H|QR_ECLEVEL_L|QR_ECLEVEL_M|QR_ECLEVEL_Q|QR_MODE_8|QR_MODE_AN|QR_MODE_ECI|QR_MODE_FNC1FIRST|QR_MODE_FNC1SECOND|QR_MODE_KANJI|QR_MODE_NUM|QR_MODE_STRUCTURE)\\b"
+				"match": "\\b(BARCODE_RATIO|BARCODE_ROTATE|DMTX_GS1|DMTX_SCHEME_ASCII|DMTX_SCHEME_BASE256|DMTX_SCHEME_C40|DMTX_SCHEME_EDIFACT|DMTX_SCHEME_TEXT|DMTX_SCHEME_X12|QR_CASE_SENSITIVE|QR_CASE_INSENSITIVE|QR_ECLEVEL_H|QR_ECLEVEL_L|QR_ECLEVEL_M|QR_ECLEVEL_Q|QR_MODE_8|QR_MODE_AN|QR_MODE_ECI|QR_MODE_FNC1FIRST|QR_MODE_FNC1SECOND|QR_MODE_KANJI|QR_MODE_NUM|QR_MODE_STRUCTURE)\\b"
 			}]
 		},
 		"functions": {
 			"patterns": [{
 				"name": "entity.name.function.oregator",
-				"match": "(\\b(ABS|ASSIGN|RGB|CONTROL|COUNT|DATE|EANPZ|ELEMENT|EXISTS|FETCH|SUM|ROUND|LENGTH|LTRIM|LZERO|RTRIM|STRSTR|STRSUB|SUBSTR)(?=\\())"
+				"match": "(\\b(ABS|ASSIGN|CONTROL|COUNT|DATETIME|EANPZ|ELEMENT|EXISTS|FETCH|LENGTH|LTRIM|LZERO|RGB|ROUND|RTRIM|STRSTR|STRSUB|SUBSTR|SUM)(?=\\())"
 			}]
 		},
 		"colors": {
@@ -238,7 +244,7 @@
 		"constant": {
 			"patterns": [{
 				"name": "constant.language.oregator",
-				"match": "\\b(FORMAT|INF_SYMBOL|MIF_TEMPLATE|NAN_SYMBOL|NEWLINE|PAGENR|REPORT)\\b"
+				"match": "\\b(FNC1_SYMBOL|FORMAT|INF_SYMBOL|MIF_TEMPLATE|NAN_SYMBOL|NEWLINE|PAGENR|REPORT)\\b"
 			}]
 		}
 	},

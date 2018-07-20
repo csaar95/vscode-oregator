@@ -8,33 +8,23 @@
         ["[", "]"],
         ["(", ")"],
         ["PAGE", "END"],
-        ["BATCH", "ENDBATCH"],
+        // ["BATCH", "ENDBATCH"],
+        // ["BLOCK", "ENDBLOCK"],
         ["COMPUTE", "END"],
         ["FOOTER", "END"],
         ["HEADER", "END"],
         ["THEN", "ELSE"],
         ["THEN", "ENDIF"],
         ["ELSE", "ENDIF"],
-        ["NEW", "STROKE"],
-        ["RECORD", "END"],
-        ["REPORT", "ENDREPORT"]
+        ["RECORD", "END"]//,
+        // ["REPORT", "ENDREPORT"]
     ],
     // symbols that are auto closed when typing
     "autoClosingPairs": [
         ["[", "]"],
         ["(", ")"],
-        ["'", "'"],
-//        ["BATCH", "ENDBATCH;"],
+        {"open": "'", "close": "'", "notIn": ["comment", "string"]}
 //        ["BLOCK", "ENDBLOCK;"],
-        ["COMPUTE", "END;"],
-        ["FOOTER", "END;"],
-        ["HEADER", "END;"],
-//        ["IF", "ENDIF;"],
-        ["INCLUDE", ";"],
-        ["NEW", ";"],
-        ["PREPEND", ";"],
-        ["RECORD", "END;"],
-        ["STROKE", ";"]
     ],
     // symbols that that can be used to surround a selection
     "surroundingPairs": [
