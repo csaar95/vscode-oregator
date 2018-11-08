@@ -38,8 +38,7 @@
     "prefix": "BLOCK",
     "description": "BLOCK-Deklaration -> Noch nicht voll funktionsfähig!",
     "body": [
-      "BLOCK ${1:name} $2",
-      "\t$0",
+      "BLOCK ${1:name}$0",
       "ENDBLOCK;"
     ]
   },

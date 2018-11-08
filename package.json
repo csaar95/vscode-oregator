@@ -2,7 +2,7 @@
 	"name": "oregator",
 	"displayName": "oregator",
 	"description": "language support for OREGATOR",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"publisher": "csaar95",
 	"engines": {
 		"vscode": "^1.19.0"
@@ -21,6 +21,7 @@
 			"url": "https://opag.ch/"
 		}
 	],
+	"license": "MIT",
 	"icon": "images/oregator128.png",
 	"galleryBanner": {
 		"color": "#84b4da",
@@ -78,13 +79,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/csaar95/oregator"
+		"url": "https://github.com/csaar95/vscode-oregator"
 	},
 	"bugs": {
-		"url": "https://github.com/csaar95/oregator/issues",
+		"url": "https://github.com/csaar95/vscode-oregator/issues",
 		"email": "oregator@sigmatech.de"
 	},
-	"homepage": "https://github.com/csaar95/oregator/blob/master/README.md",
+	"homepage": "https://github.com/csaar95/vscode-oregator/blob/master/README.md",
 	"__metadata": {
 		"id": "0c7b130c-f408-440d-8f99-d31bb79ceaf2",
 		"publisherDisplayName": "SIGMATECH Informatik",

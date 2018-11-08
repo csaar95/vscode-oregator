@@ -95,7 +95,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.oregator",
-				"match": ",|;|\\b(ABORT|BATCH|BLOCK|BREAK\\s+ON|CLEAR_PAGE|CLOSE|COMPUTE|ELSE|END|ENDBATCH|ENDBLOCK|ENDIF|ENDREPORT|FOOTER|HEADER|IF|INCLUDE|INPUT|NEW|OPEN|OUTPUT|PAGE|PREPEND|PROCESSING|RECORD|STROKE|THEN)\\b"
+				"match": ",|;|\\b(ABORT|BATCH|BLOCK|BREAK\\b\\s*\\bON|CLEAR_PAGE|CLOSE|COMPUTE|ELSE|END|ENDBATCH|ENDBLOCK|ENDIF|ENDREPORT|FOOTER|HEADER|IF|INCLUDE|INPUT|NEW|OPEN|OUTPUT|PAGE|PREPEND|PROCESSING|RECORD|STROKE|THEN)\\b"
 			}]
 		},
 		"strings": {
@@ -105,7 +105,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.oregator",
-					"match": "\\%.|@"
+					"match": "\\%\\w|@"
 				}
 			]
 		},
@@ -132,7 +132,7 @@
 		"format_modifiers": {
 			"patterns": [{
 				"name": "storage.modifiers.oregator",
-				"match": "\\b(CPI|LANDSCAPE|LPI|PORTRAIT)\\b"
+				"match": "\\b(CPI|LANDSCAPE|LPI|PORTRAIT)\\b|\\bROTATE\\b\\s*\\b(LEFT|RIGHT)\\b"
 			}]
 		},
 		"area": {

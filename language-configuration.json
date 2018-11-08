@@ -1,35 +1,36 @@
 {
-    "comments": {
-        // symbol used for single line comment. Remove this entry if your language does not support line comments
-        "lineComment": "#"
-    },
-    // symbols used as brackets
-    "brackets": [
-        ["[", "]"],
-        ["(", ")"],
-        ["PAGE", "END"],
-        // ["BATCH", "ENDBATCH"],
-        // ["BLOCK", "ENDBLOCK"],
-        ["COMPUTE", "END"],
-        ["FOOTER", "END"],
-        ["HEADER", "END"],
-        ["THEN", "ELSE"],
-        ["THEN", "ENDIF"],
-        ["ELSE", "ENDIF"],
-        ["RECORD", "END"]//,
-        // ["REPORT", "ENDREPORT"]
-    ],
-    // symbols that are auto closed when typing
-    "autoClosingPairs": [
-        ["[", "]"],
-        ["(", ")"],
-        {"open": "'", "close": "'", "notIn": ["comment", "string"]}
-//        ["BLOCK", "ENDBLOCK;"],
-    ],
-    // symbols that that can be used to surround a selection
-    "surroundingPairs": [
-        ["[", "]"],
-        ["(", ")"],
-        ["'", "'"]
-    ]
+  "comments": {
+    // symbol used for single line comment. Remove this entry if your language does not support line comments
+    "lineComment": "#"
+  },
+  // symbols used as brackets
+  "brackets": [
+    ["[", "]"],
+    ["(", ")"]
+  ],
+  // symbols that are auto closed when typing
+  "autoClosingPairs": [
+    ["[", "]"],
+    ["(", ")"],
+    {"open": "'", "close": "'", "notIn": ["comment", "string"]}
+  ],
+  // symbols that that can be used to surround a selection
+  "surroundingPairs": [
+    ["[", "]"],
+    ["(", ")"],
+    ["'", "'"]
+  ],
+  // einrueck regeln #regex-gore
+  "indentationRules": {
+    "increaseIndentPattern": "^.*?\\b(BATCH|BLOCK|COMPUTE|FOOTER|HEADER|PAGE|RECORD|REPORT)\\b.*$|^.*?\\bIF\\b(?!.*?\\bTHEN\\b).*$|^.*?\\bTHEN\\b(?!.*?(\\bELSE\\b|\\bENDIF;)).*$|^.*?\\bELSE\\b(?!.*?\\bENDIF;).*$",
+    "decreaseIndentPattern": "^.*?\\b(END|ENDBATCH|ENDBLOCK);.*$|^\\s*((?!\\bTHEN\\b)\\s*\\bELSE\\b|(?!\\bIF\\b)\\s*\\bTHEN\\b|(?!\\b(THEN|ELSE)\\b)\\s*\\bENDIF;)"
+  },
+  // falt regeln
+  "folding": {
+    "offSide": true,
+    "markers": {
+      "start": "^.*#REGION",
+      "end": "^.*#ENDREGION"
+    }
+  }
 }

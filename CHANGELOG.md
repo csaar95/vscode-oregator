@@ -5,7 +5,14 @@
 ## **[Unreleased]**
 - snippet improvements
 - snippet translation
-- auto format
+- language server with auto formatting
+
+## 1.0.5
+- **Added** indentation rules
+- **Added** folding with *`#REGION`*/*`#ENDREGION`* markers
+- **Added** support for oregator *V3.01.009*
+- **Fixed** bugs
+- **Changed** repo name
 
 ## 1.0.4
 - **Added** snippets
