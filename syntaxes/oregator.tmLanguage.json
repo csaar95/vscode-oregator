@@ -118,7 +118,7 @@
 		},
 		"format": {
 			"patterns": [{
-				"match": "^\\s*(FORMAT\\b)(.*?)(\\bBANDIT\\b|\\bCAB\\b|\\bFRAMEMAKER\\b|\\bPCL\\b|\\bPDF\\b|\\bPOSTSCRIPT\\b|\\bTEC\\b|\\bTEXT\\b|\\bWINWORD\\b)",
+				"match": "^\\s*(FORMAT\\b)(.*?)(\\bBANDIT\\b|\\bCAB\\b|\\bFRAMEMAKER\\b|\\bPCL\\b|\\bPDF\\b|\\bPNG\\b|\\bPOSTSCRIPT\\b|\\bTEC\\b|\\bTEXT\\b|\\bWINWORD\\b)",
 				"captures": {
 					"1": {
 						"name": "keyword.control.oregator"
@@ -232,7 +232,7 @@
 		"functions": {
 			"patterns": [{
 				"name": "entity.name.function.oregator",
-				"match": "(\\b(ABS|ASSIGN|CONTROL|COUNT|DATETIME|EANPZ|ELEMENT|EXISTS|FETCH|LENGTH|LTRIM|LZERO|RGB|ROUND|RTRIM|STRSTR|STRSUB|SUBSTR|SUM)(?=\\())"
+				"match": "(\\b(ABS|ASSIGN|CONTROL|COUNT|DATETIME|EANPZ|ELEMENT|EXISTS|FETCH|LENGTH|LTRIM|LZERO|RGB|ROUND|RTRIM|STRSTR|STRSUB|SUBSTR|SUM|VERSION|QR_VERSION)(?=\\())"
 			}]
 		},
 		"colors": {
@@ -244,7 +244,7 @@
 		"constant": {
 			"patterns": [{
 				"name": "constant.language.oregator",
-				"match": "\\b(FNC1_SYMBOL|FORMAT|INF_SYMBOL|MIF_TEMPLATE|NAN_SYMBOL|NEWLINE|PAGENR|REPORT)\\b"
+				"match": "\\b(DATE|FNC1_SYMBOL|FORMAT|INF_SYMBOL|MIF_TEMPLATE|NAN_SYMBOL|NEWLINE|PAGENR|REPORT|TIME)\\b"
 			}]
 		}
 	},

@@ -7,6 +7,11 @@
 - snippet translation
 - language server with auto formatting
 
+## 1.0.6
+- **Added** support for oregator *V3.01.012*
+- **Added** more snippets
+- **Fixed** bugs
+
 ## 1.0.5
 - **Added** indentation rules
 - **Added** folding with *`#REGION`*/*`#ENDREGION`* markers
