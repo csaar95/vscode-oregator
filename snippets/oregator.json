@@ -61,6 +61,13 @@
       "END;"
     ]
   },
+  "CHARSET": {
+    "prefix": "CHARSET",
+    "description": "Zeichensatz für Stringkonstanten, Default ISO-8859-1",
+    "body": [
+      "CHARSET '${1:utf-8}';"
+    ]
+  },
   "COMPUTE": {
     "prefix": "COMPUTE",
     "description": "COMPUTE",
@@ -108,6 +115,13 @@
       "DATETIME '${1:%d.%m.%y}'"
     ]
   },
+  "DEBUG": {
+    "prefix": "DEBUG",
+    "description": "Debuglevel",
+    "body": [
+      "DEBUG ${1|9,8,7,6,5,4,3,2,1,0|};"
+    ]
+  },
   "DMTX_": {
     "prefix": "DMTX_",
     "description": "Optionen BARCODE_DMTX",
@@ -140,7 +154,7 @@
     "prefix": "FETCH",
     "description": "Inhalt eines Feldes",
     "body": [
-      "FETCH(${1:'${2:block.field}'})"
+      "FETCH(${1:'${2:block}.${3:field}'})"
     ]
   },
   "FIELD": {
@@ -155,6 +169,13 @@
     "description": "Dummyfeld",
     "body": [
       "FIELD\t${1:Dummy}\t\t(${2:0},${3:0},${4:0},${5:0})$6;"
+    ]
+  },
+  "FOLD": {
+    "prefix": "FOLD",
+    "description": "Formatierter Inhalt des Feldes (FIXCOMMA, FIXED, NOQUOTE, COMMA, PICTURE)",
+    "body": [
+      "FOLD(${1:'${2:block}.${3:field}'})"
     ]
   },
   "FORMAT": {
@@ -201,6 +222,13 @@
     "description": "Datei einbinden",
     "body": [
       "INCLUDE '${1:file}';"
+    ]
+  },
+  "LOG": {
+    "prefix": "LOG",
+    "description": "Ausgabe einer Meldung im Log (stderr)",
+    "body": [
+      "LOG(${1:'${2:msg}'});"
     ]
   },
   "NEW": {

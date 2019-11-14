@@ -7,6 +7,11 @@
 - snippet translation
 - language server with auto formatting
 
+## 1.0.7
+- **Added** support for oregator *V3.01.014*
+- **Added** support for forgotten features `LOG`, `DEBUG` and `CHARSET`
+- **Fixed** bugs
+
 ## 1.0.6
 - **Added** support for oregator *V3.01.012*
 - **Added** more snippets

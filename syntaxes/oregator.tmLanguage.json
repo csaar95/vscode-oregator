@@ -232,7 +232,7 @@
 		"functions": {
 			"patterns": [{
 				"name": "entity.name.function.oregator",
-				"match": "(\\b(ABS|ASSIGN|CONTROL|COUNT|DATETIME|EANPZ|ELEMENT|EXISTS|FETCH|LENGTH|LTRIM|LZERO|RGB|ROUND|RTRIM|STRSTR|STRSUB|SUBSTR|SUM|VERSION|QR_VERSION)(?=\\())"
+				"match": "(\\b(ABS|ASSIGN|CONTROL|COUNT|DATETIME|EANPZ|ELEMENT|EXISTS|FETCH|FOLD|LENGTH|LOG|LTRIM|LZERO|RGB|ROUND|RTRIM|STRSTR|STRSUB|SUBSTR|SUM|VERSION|QR_VERSION)(?=\\())"
 			}]
 		},
 		"colors": {
@@ -244,7 +244,7 @@
 		"constant": {
 			"patterns": [{
 				"name": "constant.language.oregator",
-				"match": "\\b(DATE|FNC1_SYMBOL|FORMAT|INF_SYMBOL|MIF_TEMPLATE|NAN_SYMBOL|NEWLINE|PAGENR|REPORT|TIME)\\b"
+				"match": "\\b(CHARSET|DATE|DEBUG|FNC1_SYMBOL|FORMAT|INF_SYMBOL|MIF_TEMPLATE|NAN_SYMBOL|NEWLINE|PAGENR|REPORT|TIME)\\b"
 			}]
 		}
 	},
