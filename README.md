@@ -1,7 +1,7 @@
 # oregator README
-[![Oregator Version](https://img.shields.io/badge/Oregator-V3.01.014-blue.svg)](https://www.casymir.com/de/download1/category/15-oregator-reportgenerator?download=28:oregator-handbuch)
+[![Oregator Version](https://img.shields.io/badge/Oregator-V3.01.024-blue.svg)](https://www.casymir.com/de/download1/category/15-oregator-reportgenerator?download=28:oregator-handbuch)
 
-Language support for [OREGATOR](https://www.opag.ch/index.php/8-produkte/software/20-oregator-reportgenerator-fuer-sql-datenbanken)
+Language support for [OREGATOR](https://www.opag.ch/index.php?option=com_gridbox&view=page&id=21&Itemid=382)
 
 ## Features
 
